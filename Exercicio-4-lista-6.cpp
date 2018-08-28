@@ -1,9 +1,9 @@
-/*4. Crie uma estrutura representando os alunos de um determinado curso. A estrutura deve conter a matr´icula do aluno, nome, nota da primeira prova, nota da segunda prova e nota da terceira prova. 
-	(a) Permita ao usu´ario entrar com os dados de 5 alunos. 
+/*4. Crie uma estrutura representando os alunos de um determinado curso. A estrutura deve conter a matrÂ´icula do aluno, nome, nota da primeira prova, nota da segunda prova e nota da terceira prova. 
+	(a) Permita ao usuÂ´ario entrar com os dados de 5 alunos. 
 	(b) Encontre o aluno com maior nota da primeira prova. 
-	(c) Encontre o aluno com maior m´edia geral. 
-	(d) Encontre o aluno com menor m´edia geral 
-	(e) Para cada aluno diga se ele foi aprovado ou reprovado, considerando o valor 6 para aprovação.*/ 
+	(c) Encontre o aluno com maior mÂ´edia geral. 
+	(d) Encontre o aluno com menor mÂ´edia geral 
+	(e) Para cada aluno diga se ele foi aprovado ou reprovado, considerando o valor 6 para aprovaÃ§Ã£o.*/ 
 
 #include <stdio.h>
 #include <conio.h>
@@ -23,17 +23,17 @@ void preenche_alunos(struct aluno vet_aluno[])
 	for(i = 0;i < 5;i++)
 	{
 		system("cls");
-		printf("Digite o nome do %iº aluno: ",i+1);
+		printf("Digite o nome do %iÂº aluno: ",i+1);
 		fflush(stdin);
 		gets(vet_aluno[i].nome);
-		printf("Digite a matricula do %iº aluno: ",i+1);
+		printf("Digite a matricula do %iÂº aluno: ",i+1);
 		fflush(stdin);
 		gets(vet_aluno[i].matricula);
-		printf("Digite a nota da 1º prova: ");
+		printf("Digite a nota da 1Âº prova: ");
 		scanf("%i", &vet_aluno[i].p1);
-		printf("Digite a nota da 2º prova: ");
+		printf("Digite a nota da 2Âº prova: ");
 		scanf("%i", &vet_aluno[i].p2);
-		printf("Digite a nota da 3º prova: ");
+		printf("Digite a nota da 3Âº prova: ");
 		scanf("%i", &vet_aluno[i].p3);
 	}
 }
@@ -59,7 +59,7 @@ void maior_media_notas(struct aluno vet_aluno[]) //Mostra alunos com notas acima
 	for(i = 0;i < 5;i ++)
 		media_nota += vet_aluno[i].p1 + vet_aluno[i].p2 + vet_aluno[i].p3;
 	media_nota /= 5;
-	printf("Aluno(s) com nota(s) maior(es) que a media: \nMédia: %i \n\n", media_nota);
+	printf("Aluno(s) com nota(s) maior(es) que a media: \nMÃ©dia: %i \n\n", media_nota);
 	for(i = 0;i < 5; i++)
 		if(vet_aluno[i].p1 + vet_aluno[i].p2 + vet_aluno[i].p3 >= media_nota)
 			printf("Aluno: %s \nMatricula: %s \nNota da prova 1: %i \nNota da prova 2: %i \nNota da prova 3: %i \n\n",vet_aluno[i].nome, vet_aluno[i].matricula, vet_aluno[i].p1, vet_aluno[i].p2, vet_aluno[i].p3);
@@ -73,14 +73,14 @@ void menor_media_notas(struct aluno vet_aluno[]) //Mostra os alunos com as notas
 	for(i = 0;i < 5;i ++)
 		media_nota += vet_aluno[i].p1 + vet_aluno[i].p2 + vet_aluno[i].p3;
 	media_nota /= 5;
-	printf("Aluno(s) com nota(s) menor(es) que a media:\nMédia:%i \n\n", media_nota);
+	printf("Aluno(s) com nota(s) menor(es) que a media:\nMÃ©dia:%i \n\n", media_nota);
 	for(i = 0;i < 5; i++)
 		if(vet_aluno[i].p1 + vet_aluno[i].p2 + vet_aluno[i].p3 < media_nota)
 			printf("Aluno: %s \nMatricula: %s \nNota da prova 1: %i \Nota da prova 2: %i \nNota da prova 3: %i \n\n",vet_aluno[i].nome, vet_aluno[i].matricula, vet_aluno[i].p1, vet_aluno[i].p2, vet_aluno[i].p3);
 	getch();
 }
 
-void apro_repro(struct aluno vet_aluno[]) //Mostra quais alunos estão aprovados e reprovados
+void apro_repro(struct aluno vet_aluno[]) //Mostra quais alunos estÃ£o aprovados e reprovados
 {
 	int i;
 	for(i = 0;i < 5; i++)
@@ -99,7 +99,7 @@ int main()
 	{
 	setlocale(LC_ALL,"portuguese");
 	system("cls");
-	printf("Escolha uma das opções abaixo: \n\n1 - Cadastrar alunos. \n2 - Maior nota da primeira prova. \n3 - Mostrar alunos com notas maiores que a media. \n4 - Mostrar alunos menores que a média.");
+	printf("Escolha uma das opÃ§Ãµes abaixo: \n\n1 - Cadastrar alunos. \n2 - Maior nota da primeira prova. \n3 - Mostrar alunos com notas maiores que a media. \n4 - Mostrar alunos menores que a mÃ©dia.");
 	printf("\n5 - Mostrar alunos que foram aprovados e reprovados. \n6 - Sair do programa. \nDigite: ");
 	scanf("%i", &opcao);
 	switch(opcao)
@@ -127,7 +127,7 @@ int main()
 		case 6:
 			return 0;
 		default:
-			printf("Opção invalida");
+			printf("OpÃ§Ã£o invalida");
 			getch();
 	}
 	}
